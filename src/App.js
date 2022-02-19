@@ -8,7 +8,7 @@ import IconButton from './app/components/IconButton/IconButton';
 
 function App() {
   return (
-    <Container fluid="md">
+    <Container fluid="md" style={{padding: '2rem 4rem'}}>
       <Row>
         <Col xs={6} style={{position: 'relative'}}>
           <WeatherBanner cityName="London" date="Friday 18, September" weatherStatus="Sunny" />

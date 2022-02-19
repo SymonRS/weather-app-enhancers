@@ -1,9 +1,9 @@
 import React from 'react';
-import { WeatherBanner } from "./app/components/weatherBanner/WeatherBanner";
+import { WeatherBanner } from "./app/components/WeatherBanner/WeatherBanner";
 import { Container, Row, Col } from "react-bootstrap";
 import "./style/global.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import PillarCard from './app/components/pillarCard/PillarCard';
+import PillarCard from './app/components/PillarCard/PillarCard';
 import IconButton from './app/components/IconButton/IconButton';
 
 function App() {

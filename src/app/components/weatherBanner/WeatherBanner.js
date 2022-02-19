@@ -2,6 +2,7 @@ import {Card} from "react-bootstrap"
 import sunnyWeatherImg from "../../../assets/img/weatherStateImages/sunny weather.jpg"
 import "./weatherBanner.scss";
 
+
 export const WeatherBanner = ({cityName, date, weatherStatus}) => {
 
     return (

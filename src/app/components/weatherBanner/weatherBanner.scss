@@ -1,14 +1,15 @@
 @import "../../../style/palette.scss";
+@import "../../../style/general-styling.scss";
 
 .weatherBannerCard{
     img{
         height: 300px;
     }
     &.card-img-overlay, img{
-        border-radius: 1.2rem;
+        border-radius: $standardRadius;
     }
     &.card{
-        border-radius: 1.2rem;
+        border-radius: $standardRadius;
     }
     .card-img-overlay{
         padding: 3.2rem 5rem;

@@ -12,6 +12,7 @@
 
     &:focus, :active{
         box-shadow: none !important;
+        background: linear-gradient($light-blue, $azure);
     }
     /* .btnIcon{
 

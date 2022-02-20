@@ -18,7 +18,7 @@ const WeatherCard = ({city, date, time, degree, weatherStatus}) => {
                     <img src={weatherImage} />
                 </div>
                 <div className="degree">
-                    <Card.Text>{degree}</Card.Text>
+                    <Card.Text>{Math.round(degree)}°</Card.Text>
                 </div>
             </Card.Body>
         </Card>

@@ -3,7 +3,7 @@
 
 .weatherBannerCard{
     img{
-        height: 300px;
+        height: 27.5rem;
     }
     &.card-img-overlay, img{
         border-radius: $standardRadius;
@@ -12,7 +12,7 @@
         border-radius: $standardRadius;
     }
     .card-img-overlay{
-        padding: 3.2rem 5rem;
+        padding: 6.5rem 7rem;
     }
 
     .card-title, .card-text{
@@ -33,9 +33,4 @@
     }
 
     color: $dark-blue;
-
-    /* padding: 1.2rem 2rem;
-    display: flex;
-    justify-content: start;
-    align-items: start; */
 }

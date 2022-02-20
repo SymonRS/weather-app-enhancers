@@ -19,6 +19,8 @@ export const WeatherBanner = ({cityName, date, weatherStatus}) => {
     )
 }
 
+
+//TODO Should be moved on helpers
 const imageWeatherMap = {
     'Sunny': sunnyWeatherImg
 }

@@ -11,6 +11,7 @@
 
     &.sided{
         position: absolute;
+        border-radius: 0 $standardRadius $standardRadius 0;
     }
 
     .card-body{

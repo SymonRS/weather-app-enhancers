@@ -7,7 +7,7 @@ export const WeatherBanner = ({cityName, date, weatherStatus}) => {
 
     return (
         <Card className="weatherBannerCard">
-            <Card.Img  src={imageWeatherMap[weatherStatus]} alt="Card image" />
+            <Card.Img  src={sunnyWeatherImg} alt="Card image" />
             <Card.ImgOverlay>
                 <Card.Title>
                     <span>{cityName}</span>
@@ -17,12 +17,6 @@ export const WeatherBanner = ({cityName, date, weatherStatus}) => {
             </Card.ImgOverlay>
         </Card>
     )
-}
-
-
-//TODO Should be moved on helpers
-const imageWeatherMap = {
-    'Sunny': sunnyWeatherImg
 }
 
 export default WeatherBanner;

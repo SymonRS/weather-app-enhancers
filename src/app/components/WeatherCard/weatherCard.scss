@@ -1,0 +1,44 @@
+@import "../../../style/palette.scss";
+@import "../../../style/general-styling.scss";
+
+.weatherCard{
+    background: linear-gradient(135deg, $secondary-dark-blue, $secondary-light-blue);
+    color: white;
+    border-radius: $standardRadius;
+    height: 8.75rem;
+
+    .main{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .text-section{
+            .cityName, .date{
+                margin-bottom: .6rem;
+            }
+    
+            .cityName{
+                font-size: 1.62rem;
+                line-height: 1.6rem;
+                font-weight: 600;
+            }
+    
+            .date{
+                font-size: .93rem;
+                line-height: .9rem;
+                font-weight: 500;
+            }
+    
+            .time{
+                font-size: .75rem;
+                line-height: .7rem;
+                font-weight: 300;
+            }
+        }
+
+        .degree{
+            font-size: 3.12rem;
+            font-weight: 700;
+        }
+    }
+}

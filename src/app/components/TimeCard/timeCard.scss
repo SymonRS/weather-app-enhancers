@@ -1,0 +1,73 @@
+@import "../../../style//palette.scss";
+@import "../../../style/general-styling.scss";
+
+.timecard{
+    background: linear-gradient($light-blue, $azure);
+    border-radius: $standardRadius;
+    color: white;
+
+    .nowIndicator{
+        text-align: center;
+        font-size: 1.12rem;
+        font-weight: 700;
+        margin-top: 1.5rem;
+    }
+
+    .pastTemp, .pastHour{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .decoratorWrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .decorator{
+            font-size: 1.4rem;
+            color: white;
+            &.nowDecorator{
+               font-size:2rem;
+            }
+        }
+    }
+
+    .timelineRow{
+        margin-bottom: 1.2rem;
+    }
+
+    .pastTemp{
+        font-size: 1.87rem;
+        font-weight: 300;
+        &.firstTemp{
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+    }
+
+    .pastHour{
+        font-size: 1.25rem;
+        font-weight: 300;
+        white-space: pre;
+    }
+
+    .lineThrough{
+        width: 7px;
+        height: 75%;
+        position: absolute;
+        bottom: 0;
+        background: linear-gradient(white, transparent);
+        left: calc(50% - 3.5px);
+    }
+
+    .opacityFooter{
+        background: linear-gradient( transparent, white);
+        position: absolute;
+        height: 5rem;
+        bottom: 0;
+        width: 100%;
+        opacity: .5;
+        left: 0;
+        border-radius:  0 0 $standardRadius $standardRadius;
+    }
+}

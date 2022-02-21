@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchCityWeather, fetchMultipleCitiesWeather } from './weatherApi';
+import { fetchCityWeather, fetchMultipleCitiesWeather, fetchCityForecastByCoord } from './weatherApi';
 import { getCurrentDate, getCurrentTime } from '../../helpers/dateUtils';
 
 const initialState = {
@@ -8,7 +8,10 @@ const initialState = {
       countryCode: 'GB',
       date: getCurrentDate(),
       weatherStatus: '-',
-      temp: '-'
+      temp: '-',
+      lon: '',
+      lat: '',
+      hourlyForecast:[]
   },
   otherCities: [
     {
@@ -41,12 +44,27 @@ const initialState = {
 export const fetchMainCityData = createAsyncThunk(
   'weather/fetchDataMainCity',
   async (callData) => {
-    const response = await fetchCityWeather(callData.cityName, callData.countryCode);
+    let response = await fetchCityWeather(callData.cityName, callData.countryCode);
+    let forecastResponse = await fetchCityForecastByCoord(response.coord.lat, response.coord.lon);
+    
+    response = {
+      ...response,
+      forecastList: forecastResponse
+    };
     console.log('Returned data: ', response);
 
     return response;
   }
 );
+
+/* export const fetchMainCityHourlyForecast = createAsyncThunk(
+  'weather/fetchDataForecastMainCity',
+  async (callData) => {
+    const response = await fetchMainCityHourlyForecast(callData.lat, callData.lon);
+
+    return response;
+  }
+) */
 
 export const fetchOtherCitiesData = createAsyncThunk(
     'weather/fetchDataOtherCities',
@@ -88,6 +106,9 @@ export const weatherSlice = createSlice({
         state.status = 'idle';
         state.mainCityState.weatherStatus = action.payload.weather[0].main;
         state.mainCityState.temp = action.payload.main.temp;
+        state.mainCityState.lon = action.payload.coord.lon;
+        state.mainCityState.lat = action.payload.coord.lat;
+        state.mainCityState.hourlyForecast = action.payload.forecastList;
     });
 
     builder

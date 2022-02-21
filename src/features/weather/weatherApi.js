@@ -17,3 +17,34 @@ export const fetchMultipleCitiesWeather = async (cities) => {
     }
     return result;
 }
+
+export const fetchCityForecastByCoord = async (lat, lon) => {
+    //For enhancers i can't take the real data cause they are in paid plan, anyway i will mock this data :D
+    /* return await fetch(`http://api.openweathermap.org/data/2.5/forecast/hourly?lat=${lat}&lon=${lon}&cnt=4&appid=9b0e9da41b1b3cfba73adf90a49d13b8`)
+    .then(
+        response => response.json().then(data => {console.log('data:', data); return data}),
+    ) */
+
+    return [
+        {
+            id: 1,
+            time: '3:00 PM',
+            temp: '16.2'
+        },
+        {
+            id: 2,
+            time: '2:00 PM',
+            temp: '20.1'
+        },
+        {
+            id: 3,
+            time: '1:00 PM',
+            temp: '18.5'
+        },
+        {
+            id: 4,
+            time: '12:00 AM',
+            temp: '18.3'
+        }
+    ]
+}

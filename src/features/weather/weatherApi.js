@@ -1,4 +1,5 @@
 
+// I know that the base url should be taken from enviroment file but this create react app template doesn't have the dot-env library installed, or most probably there is but it's not exposed, so i prefer to not eject the solution
 export const fetchCityWeather = async (cityName, countryCode) => {
     return await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName},${countryCode}&units=metric&appid=9b0e9da41b1b3cfba73adf90a49d13b8`)
     .then(

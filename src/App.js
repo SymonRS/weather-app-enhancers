@@ -8,6 +8,7 @@ import IconButton from './app/components/IconButton/IconButton';
 import WeatherCard from './app/components/WeatherCard/WaetherCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMainCityData, fetchOtherCitiesData } from "./features/weather/weatherSlice";
+import TimeCard from './app/components/TimeCard/TimeCard';
 
 
 function App() {
@@ -34,23 +35,20 @@ function App() {
             <IconButton style={{width: '100%'}} text='Aggiungi città' icon='SquarePlus'/>
           </div>
           {otherCitiesData.map(cityItem => <WeatherCard key={cityItem.id} city={cityItem.name} date={cityItem.date} time={cityItem.time} degree={cityItem.temp} weatherStatus={cityItem.weatherStatus} />)}
-          {/* <WeatherCard city="Florence" date="Friday 18, September" time="2:38 p.m." degree="18°" weatherStatus="Cloudy" />
-          <WeatherCard city="Venice" date="Friday 18, September" time="2:38 p.m." degree="20°" weatherStatus="ModRain" /> */}
         </Col>
       </Row>
       <Row>
         <Col lg={3}>
           <Row>
-            <Col>
+            <Col className="cardSectionTitle" >
               Today
             </Col>
           </Row>
           <Row>
-
+            <TimeCard forecastList={mainCityData.hourlyForecast} />
           </Row>
         </Col>
-        <Col lg={5}>
-
+        <Col lg={5} >
         </Col>
         <Col lg={4}>
 
